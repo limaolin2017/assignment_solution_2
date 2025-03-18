@@ -1,0 +1,38 @@
+attention_logit_softcapping: null
+attention_scores_scalar: null
+attn_bias: true
+bias: false
+block_size: 32768
+final_logit_softcapping: null
+gelu_approximate: none
+head_size: 128
+hf_config:
+  name: Qwen2.5-3B-Instruct
+  org: Qwen
+intermediate_size: 11008
+lm_head_bias: false
+mlp_class_name: LLaMAMLP
+n_embd: 2048
+n_expert: 0
+n_expert_per_token: 0
+n_head: 16
+n_layer: 36
+n_query_groups: 2
+name: Qwen2.5-3B-Instruct
+norm_class_name: RMSNorm
+norm_eps: 1.0e-06
+norm_qk: false
+padded_vocab_size: 151936
+padding_multiple: 512
+parallel_residual: false
+post_attention_norm: false
+post_mlp_norm: false
+rope_adjustments: null
+rope_base: 1000000
+rope_condense_ratio: 1
+rotary_percentage: 1.0
+scale_embeddings: false
+shared_attention_norm: false
+sliding_window_layer_placing: null
+sliding_window_size: null
+vocab_size: 151643

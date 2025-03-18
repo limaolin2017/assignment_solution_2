@@ -1,0 +1,42 @@
+checkpoint_dir: Qwen/Qwen2.5-3B-Instruct
+out_dir: out/custom-model
+precision: bf16-true
+devices: 1
+num_nodes: 1
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_query: true
+lora_key: false
+lora_value: true
+lora_projection: false
+lora_mlp: false
+lora_head: false
+data:
+  class_path: litgpt.data.JSON
+  init_args:
+    json_path: /teamspace/studios/this_studio/src/finetune_classification.json
+    mask_prompt: false
+    val_split_fraction: 0.1
+    prompt_style: alpaca
+    ignore_index: -100
+    seed: 42
+    num_workers: 4
+train:
+  save_interval: 1000
+  log_interval: 1
+  global_batch_size: 16
+  micro_batch_size: 1
+  lr_warmup_steps: 100
+  epochs: 5
+  min_lr: 6.0e-05
+eval:
+  interval: 100
+  max_new_tokens: 100
+  max_iters: 100
+  initial_validation: false
+  final_validation: true
+  evaluate_example: first
+optimizer: AdamW
+logger_name: csv
+seed: 1337
