@@ -21,3 +21,5 @@
 /.profile
 /.ssh
 /.sudo_as_admin_successful
+/out
+/checkpoints
